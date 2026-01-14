@@ -20,9 +20,32 @@ NAV
 
 */
 
+.nav__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.nav__title {
+    color: white;
+}
+
+.nav__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.nav__container, .nav__links {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .nav__links{
     display: flex;
-    justify-content: flex-end;;
 }
 
 .nav__link {
@@ -35,8 +58,9 @@ NAV
 
 .nav__link--btn {
     border-radius:20px;
+    color: black;
     border: 2px solid black;
-    padding: 12px 12px;
+    padding: 4px 8px;
 }
 
 .nav__back-ground {
