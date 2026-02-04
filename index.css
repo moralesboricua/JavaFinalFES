@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -20,6 +27,21 @@ NAV
 
 */
 
+
+ .nav__row{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.nav__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
 .nav__header {
     display: flex;
     flex-direction: column;
@@ -27,7 +49,6 @@ NAV
     align-items: center;
 
 }
-
 
 .nav__title {
     color: white;
