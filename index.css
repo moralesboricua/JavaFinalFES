@@ -67,6 +67,7 @@ NAV
 
 .nav__links{
     display: flex;
+    justify-content: space-between;
 }
 
 .nav__link {
