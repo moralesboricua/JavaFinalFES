@@ -8,14 +8,15 @@ async function main() {
     console.log(
     moviesData.map( 
         (movies) => `<div class="movie-card">
-        <div class="movie-card__container">
-            <h3>Title</h3>
-            <p><b>Release Date: </b> fghjklkjhgfd</p>
-            <p><b>Description: </b> dfghjkjhgfd</p>
-        </div>
-    </div>`
-        )
-        );
+            <div class="movie-card__container">
+                <h3>Title</h3>
+                <p><b>Release Date: </b> fghjklkjhgfd</p>
+                <p><b>Description: </b> dfghjkjhgfd</p>
+            </div>
+        </div>`
+            )
+            .join("")
+            );
     
     }
 
