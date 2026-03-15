@@ -10,9 +10,9 @@ async function main() {
     userListElement.innerHTML = moviesData.data.map( 
         (movies) => `<div class="movie-card">
             <div class="movie-card__container">
-                <h3>Title</h3>
-                <p><b>Release Date: </b></p>
-                <p><b>Description: </b></p>
+                <h3>${movies.title}</h3>
+                <p><b>Release Date: </b>${movies.Release_date}</p>
+                <p><b>Description: </b>${movies.description}</p>
             </div>
         </div>`
             )
