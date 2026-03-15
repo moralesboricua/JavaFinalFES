@@ -29,7 +29,7 @@
                             <input type="text" placeholder="Search Movies...">
                             <button class="nav__input--btn">Search</button>
 
-                            <select id="nav____input--sort">
+                            <select id="nav____input--sort" onchange="filterMovies(event)">
                                 <option value="" disable selected>Sort</option>
                                 <option value="Alphabetical A to Z">Alphabetical A to Z</option>
                                 <option value="Alphabetical Z to A">Alphabetical Z to A</option>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="movies-list">
+                        <div class="movies">
                             <div class="movie">
                                 <div class="movie-card">
                                     <div class="movie-card__container">
