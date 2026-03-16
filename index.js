@@ -12,17 +12,17 @@ async function main(filter) {
         
         if (filter === 'Oldest to newest') {
             console.log(filter);
-            let filteredArray = [filterMovies].sort((a, b) => {a.release_date - b.release_date});
+            let filteredArray = [moviesData].sort((a, b) => a.release_date - b.release_date);
             userListElement.innerHTML = filteredArray.map((movies) => moviesHTML(movies)).join("");
         }
         else if (filter === 'Newest to oldest') {
-            let filteredArray = [filterMovies].sort((a, b) => {b.release_date - a.release_date});
+            let filteredArray = [filterMovies].sort((a, b) => b.release_date - a.release_date);
         }
         else if (filter === 'Alphabetical A to Z') {
-            let filteredArray = [filterMovies].sort((a, b) => {return a.title.localecompare(b.title)});
+            let filteredArray = [filterMovies].sort((a, b) => a.title.localecompare(b.title));
         }
         else if (filter === 'Alphabetical Z to A') {
-            let filteredArray = [filterMovies].sort((a, b) => {return b.title.localecompare(a.title)});
+            let filteredArray = [filterMovies].sort((a, b) => b.title.localecompare(a.title));
         }
     
     userListElement.innerHTML = moviesData.data.map((movies) => moviesHTML(movies)).join("");
