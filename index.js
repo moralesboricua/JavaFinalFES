@@ -9,22 +9,23 @@ async function main(filter) {
     const moviesData = await movies.json();
         const userListElement = document.querySelector(".movies");
 
+        let filteredArray = moviesData.data;
         
         if (filter === 'Oldest to newest') {
             console.log(filter);
-            let filteredArray = moviesData.sort((a, b) => a.release_date - b.release_date);
+            filteredArray = filteredArray.sort((a, b) => a.release_date - b.release_date);
         }
         else if (filter === 'Newest to oldest') {
-            let filteredArray = [filterMovies].sort((a, b) => b.release_date - a.release_date);
+            filteredArray = filteredArray.sort((a, b) => b.release_date - a.release_date);
         }
         else if (filter === 'Alphabetical A to Z') {
-            let filteredArray = [filterMovies].sort((a, b) => a.title.localecompare(b.title));
+            filteredArray = filteredArray.sort((a, b) => a.title.localecompare(b.title));
         }
         else if (filter === 'Alphabetical Z to A') {
-            let filteredArray = [filterMovies].sort((a, b) => b.title.localecompare(a.title));
+            filteredArray = filteredArray.sort((a, b) => b.title.localecompare(a.title));
         }
     
-    userListElement.innerHTML = moviesData.data.map((movies) => moviesHTML(movies)).join("");
+    userListElement.innerHTML = filteredArray.map((movies) => moviesHTML(movies)).join("");
         
         }
         
