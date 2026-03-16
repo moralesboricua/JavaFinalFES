@@ -12,8 +12,7 @@ async function main(filter) {
         
         if (filter === 'Oldest to newest') {
             console.log(filter);
-            let filteredArray = [moviesData].sort((a, b) => a.release_date - b.release_date);
-            userListElement.innerHTML = filteredArray.map((movies) => moviesHTML(movies)).join("");
+            let filteredArray = moviesData.sort((a, b) => a.release_date - b.release_date);
         }
         else if (filter === 'Newest to oldest') {
             let filteredArray = [filterMovies].sort((a, b) => b.release_date - a.release_date);
