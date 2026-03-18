@@ -72,6 +72,10 @@ NAV
     justify-content: space-between;
 }
 
+.nav__link :hover ::before {
+
+}
+
 .nav__link {
     display: flex;
     align-items: center;
