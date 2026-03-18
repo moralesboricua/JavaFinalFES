@@ -22,7 +22,7 @@
                     </div>
                 </div>
                     <div class="nav__header">
-                        <div class="nav__title">
+            <!--            <div class="nav__title">
                             <h1>Browse our Movies</h1>
                         </div>
                         <div class="nav__input">
@@ -37,6 +37,7 @@
                                 <option value="Oldest to newest">Oldest to newest</option>
                             </select>
                         </div>
+                        -->
                     </div>
             </div>
         </div>
@@ -47,9 +48,20 @@
         <div class="container">
             <div class="row">
                 <div class="movie__header">
-                    <h1 class="section__title movies__header--title">
-                        Search Results
-                    </h1>
+                    <h1>Browse our Movies</h1>
+                        <div class="nav__input">
+                            <input type="text" placeholder="Search Movies...">
+                            <button class="nav__input--btn">Search</button>
+
+                            <select id="nav____input--sort" onchange="filterMovies(event)">
+                                <option value="" disable selected>Sort</option>
+                                <option value="Alphabetical A to Z">Alphabetical A to Z</option>
+                                <option value="Alphabetical Z to A">Alphabetical Z to A</option>
+                                <option value="Newest to oldest">Newest to oldest</option>
+                                <option value="Oldest to newest">Oldest to newest</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="container">
                     <div class="row">
@@ -57,12 +69,14 @@
                             <div class="movie">
                                 <div class="movie-card">
                                     <div class="movie-card__container">
-                                        <figure class="book__img--wrapper">
-                                            <img src="" alt="" class="book__img">
+                                        <figure class="movie__img--wrapper">
+                                            <img src="" alt="" class="movie__img">
                                         </figure>
+                                        <div class="movie__card--spacer">
                                         <h3>Title</h3>
                                         <p><b>Release Date</b> fghjklkjhgfd</p>
                                         <p><b>Description</b> dfghjkjhgfd</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -78,11 +92,15 @@
    <footer>
         <div class="container">
             <div class="row">
-                <div class="footer__content">
-                    <p>Copyright &copy; 2026</p>
-                    <p>Home</p>
-                    <p>Find your movie</p>
-                    <p>Contact</p>
+                <div class="footer__content" >
+                    <div class="footer__top">
+                    <p class="white">Home</p>
+                    <p class="white">Find your movie</p>
+                    <p class="white">Contact</p>
+                    </div>
+                    <div class="footer__bottom">
+                    <p class="white">Copyright &copy; 2026</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,9 +108,3 @@
     
 </body>
 </html>
-
-*/ return new promise((resolve) => {
-        setTimeout(() => {
-            
-        });
-    }); /*

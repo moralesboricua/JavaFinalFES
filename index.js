@@ -6,10 +6,12 @@
 
 async function main(filter) {
     
+    
 
     const movies = await fetch("https://ghibli-api.vercel.app/api/films");
     const moviesData = await movies.json();
         const userListElement = document.querySelector(".movies");
+        
 
         let filteredArray = moviesData.data;
         
@@ -26,12 +28,15 @@ async function main(filter) {
         else if (filter === 'Alphabetical Z to A') {
             filteredArray = filteredArray.sort((a, b) => b.title.localeCompare(a.title));
         }
+        
      console.log(moviesData);
     userListElement.innerHTML = filteredArray.map((movies) => moviesHTML(movies)).join("");
-        
+
         }
         
 main();
+
+
 
 
 function filterMovies(event) {
@@ -41,23 +46,29 @@ function filterMovies(event) {
 function moviesHTML(movies) {
     return `<div class="movie-card">
             <div class="movie-card__container">
-            <figure class="book__img--wrapper">
-                <img src="${movies.image}" alt="" class="book__img">
+            <figure class="movie__img--wrapper">
+                <img src="${movies.image}" alt="" class="movie__img">
             </figure>
+            <div class="movie__card--spacer">
                 <h3>${movies.title}</h3>
                 <p><b>Release Date: </b>${movies.release_date}</p>
                 <p><b>Description: </b>${movies.description}</p>
+            </div>    
             </div>
         </div>`;
 }
 
-new Promise((resolve) => {
-    setTimeout(async() => {
-        resolve([
-            
-        ])
-    }, 1000)
-})
-
+//function moviesHTML(movie) {
+  //const bg = movie.image;
+  //const bgUrl = `background-image: url('${movie.image}')`;
+  //return `
+    //<div class="movie-card" style="${bgUrl}">
+      //<div class="movie-card__container">
+        //<h3>${movie.title}</h3>
+        //<p><b>Release Date: </b>${movie.release_date}</p>
+        //<p><b>Description: </b>${movie.description}</p>
+      //</div>
+    //</div>`;
+//}
        
 
