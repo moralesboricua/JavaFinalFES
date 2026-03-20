@@ -31,7 +31,7 @@ async function main(filter) {
         
      console.log(moviesData);
     userListElement.innerHTML = filteredArray.slice(0, 6).map((movies) => moviesHTML(movies)).join("");
-
+                                            //^^slice is choosing where to start in the results, and how many results to print
         }
         
 main();
