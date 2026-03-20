@@ -203,3 +203,10 @@ footer {
     justify-content: center;
     padding: 50px 12px 12px 12px;
 }
+
+.footer__link{
+    display: flex;
+    justify-content: center;
+    width: calc(100% / 3);
+
+}
