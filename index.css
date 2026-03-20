@@ -1,8 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: opacity 300ms ease;
+   
+}
+
+
+p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+h3{
+    text-align: center;
+    line-height: 1.25;
 }
 
 .row {
@@ -28,76 +63,76 @@ NAV
 
 */
 
-
- .nav__row{
+.nav__container {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-}
-
-.nav__top {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-
-}
-
-.nav__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    
 }
 
 .nav__title {
     color: white;
 }
 
-.nav__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.nav__container, .nav__links {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
 .nav__links{
     display: flex;
-    justify-content: space-between;
-}
-
-.nav__link :hover ::before {
-
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
 }
 
 .nav__link {
-    display: flex;
-    align-items: center;
-    margin: 4px;
+    list-style: none;
+    margin: 8px 12px;
     padding: 4px;
     color: white;
 }
 
-.nav__link--btn {
-    border-radius:20px;
-    color: black;
-    border: 2px solid black;
-    padding: 4px 8px;
+.nav__link:hover {
+    transform: scale(1.15);
 }
+
+
+.nav__link--btn {
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    padding: 4px 8px;
+    background-color: blue;
+}
+
+.nav__link--btn:hover {
+    content: "";
+    background-color: purple;
+    transition: all 50ms ease;
+}
+
 
 .nav__back-ground {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 150px;
+    height: 125px;
 }
 
+.link__hover-effect {
+    position: relative;
+}
+
+    .link__hover-effect:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: white;
+    width: 0%;
+    bottom: -3px;
+    right: 0;
+    transition: all 200ms ease;
+
+} 
+
+ .link__hover-effect:hover:after{
+    width: 100%;
+    left: 0;
+} 
 
 
 /*
@@ -121,8 +156,7 @@ MAIN
     justify-content: space-between;
     flex-direction: column;
     align-items: space-between;
-    margin: 12px 12px;
-    /* border: 3px solid black; */  
+    margin: 12px 12px; 
 } 
 
  .movie__card--spacer {
@@ -188,13 +222,17 @@ footer {
     padding: 20px;
 }
 
-.footer__top {
-    display: flex;
-    justify-content: space-between;
+ .footer__top {
     padding: 12 12px;
     margin: 12px 12px;
     width: 100%;
+}
 
+.footer__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
 }
 
 .footer__bottom {
@@ -205,8 +243,85 @@ footer {
 }
 
 .footer__link{
+    cursor: pointer;
+    position: relative;
     display: flex;
     justify-content: center;
     width: calc(100% / 3);
+    cursor: pointer;
 
 }
+
+    .link__hover-effect:hover {
+        transform: scale(1.05);
+    } 
+
+    .link__hover-effect:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: white;
+    width: 0%;
+    bottom: -3px;
+    right: 0;
+    transition: all 200ms ease;
+
+} 
+
+ .link__hover-effect:hover:after{
+    width: 100%;
+    left: 0;
+} 
+
+/* Small phones, tablets, arge smartphones */
+
+@media (max-width: 768px) {
+    
+    navs {
+        height: 68px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+    .nav__linkk:not(:last-child){
+        display: none;
+    }
+
+    .project__description{
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .project__description--para{
+        display: none;
+    }
+
+    .project__description--links{
+        display: flex;
+        justify-content: center;
+    }
+
+    .project__description--title{
+        font-size: 32px;
+        line-height: 1;
+    }
+
+    .project__deescription--sub-title{
+        text-align: center;
+        margin: 12px 0;
+    }
+}
+
+    
