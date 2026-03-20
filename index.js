@@ -30,7 +30,7 @@ async function main(filter) {
         }
         
      console.log(moviesData);
-    userListElement.innerHTML = filteredArray.map((movies) => moviesHTML(movies)).join("");
+    userListElement.innerHTML = filteredArray.slice(0, 6).map((movies) => moviesHTML(movies)).join("");
 
         }
         
