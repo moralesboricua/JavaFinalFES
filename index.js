@@ -4,7 +4,7 @@
 
 
 
-async function main(filter) {
+async function main(filter, searchValue) {
     
     
 
@@ -12,11 +12,20 @@ async function main(filter) {
     const moviesData = await movies.json();
         const userListElement = document.querySelector(".movies");
         
+        function searchMovies() {
+            const searchValue = document.getElementById("sortInput").value;
+            main(null, searchValue);
+        }
+
+        
 
         let filteredArray = moviesData.data;
-        
-        if (filter === 'Oldest to newest') {
-            console.log(filter);
+        if (searchValue) {
+            filteredArray = filteredArray.filter(movie =>
+            movie.title.toLowerCase().includes(searchValue.toLowerCase())
+            );
+        }
+        else if (filter === 'Oldest to newest') {
             filteredArray = filteredArray.sort((a, b) => a.release_date - b.release_date);
         }
         else if (filter === 'Newest to oldest') {
@@ -28,6 +37,10 @@ async function main(filter) {
         else if (filter === 'Alphabetical Z to A') {
             filteredArray = filteredArray.sort((a, b) => b.title.localeCompare(a.title));
         }
+
+        
+
+
         //else if (filter === ${movies.title}) {
           //  filteredArray = filteredArray.sort((a, b) => a.titlelocaleCompare(b.title));
         //}
@@ -56,6 +69,7 @@ async function main(filter) {
         }
         
 main();
+
 
 
 
