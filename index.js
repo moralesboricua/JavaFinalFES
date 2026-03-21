@@ -12,20 +12,18 @@ async function main(filter, searchValue) {
     const moviesData = await movies.json();
         const userListElement = document.querySelector(".movies");
         
-        function searchMovies() {
-            const searchValue = document.getElementById("sortInput").value;
-            main(null, searchValue);
-        }
+        
 
         
 
         let filteredArray = moviesData.data;
+
         if (searchValue) {
             filteredArray = filteredArray.filter(movie =>
             movie.title.toLowerCase().includes(searchValue.toLowerCase())
             );
         }
-        else if (filter === 'Oldest to newest') {
+        if (filter === 'Oldest to newest') {
             filteredArray = filteredArray.sort((a, b) => a.release_date - b.release_date);
         }
         else if (filter === 'Newest to oldest') {
@@ -41,29 +39,7 @@ async function main(filter, searchValue) {
         
 
 
-        //else if (filter === ${movies.title}) {
-          //  filteredArray = filteredArray.sort((a, b) => a.titlelocaleCompare(b.title));
-        //}
-
-
-        //const sorting = document.getElementById('sortInput').addEventListener('input', function() {
-          //  const sortField = sorting.value;
-            //sortDataByField(sortField)
-        //});
-        
-
-       // function searchBar(filter) {
-       //if (filter === ${movies.title}) {
-       //return ${movies.title}
-       //}
-          //  filteredArray = filteredArray.sort((a, b) => a.titlelocaleCompare(b.title));
-    // else if (filter !== (movies.title)){a, b
-         //   continue;
-        //}
-    
-
-
-     console.log(moviesData);
+        console.log(moviesData);
     userListElement.innerHTML = filteredArray.slice(0, 6).map((movies) => moviesHTML(movies)).join("");
                                             //^^slice is choosing where to start in the results, and how many results to print
         }
@@ -71,8 +47,10 @@ async function main(filter, searchValue) {
 main();
 
 
-
-
+function searchMovies() {
+            const searchValue = document.getElementById("sortInput").value;
+            main(null, searchValue);
+        }
 
 function filterMovies(event) {
     main(event.target.value);
