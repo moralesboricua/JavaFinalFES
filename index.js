@@ -28,7 +28,28 @@ async function main(filter) {
         else if (filter === 'Alphabetical Z to A') {
             filteredArray = filteredArray.sort((a, b) => b.title.localeCompare(a.title));
         }
+        //else if (filter === ${movies.title}) {
+          //  filteredArray = filteredArray.sort((a, b) => a.titlelocaleCompare(b.title));
+        //}
+
+
+        //const sorting = document.getElementById('sortInput').addEventListener('input', function() {
+          //  const sortField = sorting.value;
+            //sortDataByField(sortField)
+        //});
         
+
+       // function searchBar(filter) {
+       //if (filter === ${movies.title}) {
+       //return ${movies.title}
+       //}
+          //  filteredArray = filteredArray.sort((a, b) => a.titlelocaleCompare(b.title));
+    // else if (filter !== (movies.title)){a, b
+         //   continue;
+        //}
+    
+
+
      console.log(moviesData);
     userListElement.innerHTML = filteredArray.slice(0, 6).map((movies) => moviesHTML(movies)).join("");
                                             //^^slice is choosing where to start in the results, and how many results to print
